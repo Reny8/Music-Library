@@ -1,0 +1,28 @@
+
+
+.button {
+  display: flex;
+}
+.button button {
+  height: 2rem;
+  width: 4.5rem;
+  color: white;
+  border-radius: 10px;
+  border-style: none;
+  margin: 0rem 0.5rem
+}
+
+.each-1 button {
+  background-color: olive;
+}
+.each-2 button {
+  background-color:  orange;
+}
+.each-3 button {
+  background-color: darkred;
+}
+
+table.table{
+    background-color:transparent;
+    color:white
+}

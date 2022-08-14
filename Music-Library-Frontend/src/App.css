@@ -1,0 +1,29 @@
+ul {
+    display:flex;
+    list-style-type: none;
+    justify-content:space-between;
+    padding-right: 1rem;
+    padding-left: 0rem;
+}
+
+div {
+    font-family: cursive;
+}
+.add {
+    border-style: none;
+    width: 4rem;
+    height: 2.5rem;
+    border-radius: 10px;
+    color: white;
+    background-color:rgb(106, 60, 149);
+
+}
+.page {
+    background-color: rgb(41, 40, 40);
+    color: white;
+    padding-bottom: 3rem
+}
+form input {
+    background-color:rgb(33, 32, 32);
+    color:white
+}
