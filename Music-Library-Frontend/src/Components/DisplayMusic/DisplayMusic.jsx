@@ -38,7 +38,7 @@ const DisplayMusic = (props) => {
               <tr key={song.id} scope="row">
                 <td>
                   <img
-                    style={{ width: 70, height: "auto" }}
+                  className="album-image"
                     src={song.album_image}
                   />
                 </td>

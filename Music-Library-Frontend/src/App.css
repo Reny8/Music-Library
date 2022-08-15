@@ -13,9 +13,7 @@ div {
     border-style: none;
     width: 4rem;
     height: 2.5rem;
-    border-radius: 10px;
-    color: white;
-    background-color:rgb(106, 60, 149);
+    background-color:transparent
 
 }
 .page {

@@ -29,7 +29,7 @@ const SearchBar = (props) => {
     <div className="nav-bar">
         <a href="#add-song">
           <button className="add">
-            <img src="https://img.icons8.com/ios-filled/30/000000/add--v1.png" />
+          <img src="https://img.icons8.com/ios-filled/50/000000/plus-2-math.png"/>
           </button>
         </a>
       <h1 className="heading">Music Library</h1>
