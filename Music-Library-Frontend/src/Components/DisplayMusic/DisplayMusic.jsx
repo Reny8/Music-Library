@@ -4,20 +4,26 @@ import axios from "axios";
 
 const DisplayMusic = (props) => {
   async function updateLikes(songPk) {
-    let response = await axios.patch(`http://127.0.0.1:8000/music/${songPk}/`);
-    if (response.status === 202) await props.getAllSongs();
+    try {
+      await axios.patch(`http://127.0.0.1:8000/music/${songPk}/`);
+    } catch (error) {
+      alert(error.message);
+    }
   }
   async function updateSong(songPk, songObject) {
-    let response = await axios.put(
-      `http://127.0.0.1:8000/music/${songPk}/`,
-      songObject
-    );
-    props.getAllSongs();
+    try {
+      await axios.put(`http://127.0.0.1:8000/music/${songPk}/`, songObject);
+      props.getAllSongs();
+    } catch (error) {}
   }
 
   async function deleteSong(songPk) {
-    let response = await axios.delete(`http://127.0.0.1:8000/music/${songPk}/`);
-    if (response.status === 200) await props.getAllSongs();
+    try {
+      await axios.delete(`http://127.0.0.1:8000/music/${songPk}/`);
+      props.getAllSongs();
+    } catch (error) {
+      alert(error.message);
+    }
   }
   return (
     <div>
@@ -38,8 +44,9 @@ const DisplayMusic = (props) => {
               <tr key={song.id} scope="row">
                 <td>
                   <img
-                  className="album-image"
+                    className="album-image"
                     src={song.album_image}
+                    alt="album"
                   />
                 </td>
                 <td>{song.album}</td>

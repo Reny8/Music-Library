@@ -1,43 +1,37 @@
-import React, { useState } from "react";
+import React from "react";
 import "./DisplayMusic.css";
 const Buttons = (props) => {
-  const [object, setObject] = useState({
-    title: props.songs.title,
-    artist: props.songs.artist,
-    album: props.songs.album,
-    release_date: props.songs.release_date,
-    genre: props.songs.genre,
-    likes: props.songs.likes,
-    album_image: props.songs.album_image,
-  });
-
   function handleLikes(id) {
     props.updateLikes(id);
   }
   function handleUpdate(id) {
+    let object = {
+      title: props.songs.title,
+      artist: props.songs.artist,
+      album: props.songs.album,
+      release_date: props.songs.release_date,
+      genre: props.songs.genre,
+      likes: props.songs.likes,
+      album_image: props.songs.album_image,
+    };
     let category = prompt(
       `You have selected the song: ${props.songs.title}\nWhat would you like to change:\n Enter album, artist, title, genre,release date or image`
     ).toLowerCase();
     let value = prompt(`Enter your new ${category}`);
     if (category == "album") {
-      setObject({ ...object, album: value });
-      props.updateSong(id, object);
+      object.album = value;
     } else if (category == "artist") {
-      setObject({ ...object, artist: value });
-      props.updateSong(id, object);
+      object.artist = value;
     } else if (category == "title") {
-      setObject({ ...object, title: value });
-      props.updateSong(id, object);
+      object.title = value;
     } else if (category == "genre") {
-      setObject({ ...object, genre: value });
-      props.updateSong(id, object);
+      object.genre = value;
     } else if (category == "release date") {
-      setObject({ ...object, release_date: value });
-      props.updateSong(id, object);
+      object.release_date = value;
     } else if (category == "image") {
-      setObject({ ...object, album_image: value });
-      props.updateSong(id, object);
+      object.album_image = value;
     }
+    props.updateSong(id, object);
   }
 
   function handleDelete(id) {
@@ -54,7 +48,7 @@ const Buttons = (props) => {
           </button>
         </div>
         <div className="each-2">
-          <button onClick={() => handleUpdate(props.songs.id, object)}>
+          <button onClick={() => handleUpdate(props.songs.id)}>
             <img src="https://img.icons8.com/ios-glyphs/30/000000/edit--v1.png" />
           </button>
         </div>
