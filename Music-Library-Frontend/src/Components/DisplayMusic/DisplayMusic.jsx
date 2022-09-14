@@ -6,6 +6,7 @@ const DisplayMusic = (props) => {
   async function updateLikes(songPk) {
     try {
       await axios.patch(`http://127.0.0.1:8000/music/${songPk}/`);
+      props.getAllSongs();
     } catch (error) {
       alert(error.message);
     }
